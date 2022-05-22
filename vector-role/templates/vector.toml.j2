@@ -1,0 +1,8 @@
+[sources.pes]
+type = "internal_logs"
+
+[sinks.pes-sink]
+type = "vector"
+inputs = [ "pes" ]
+address = "51.250.90.50:6000"
+version = "1"

@@ -1,0 +1,21 @@
+[sources.vector-main]
+type = "vector"
+address = "0.0.0.0:9000"
+version = "1"
+
+
+[sinks.Clickhouse-sink]
+type = "clickhouse"
+inputs = [ "vector-main" ]
+database = "mydatabase"
+endpoint = "http://51.250.3.225:8123"
+table = "mytable"
+compression = "gzip"
+
+[sinks.lighthouse-sink]
+type = "clickhouse"
+inputs = [ "vector-main" ]
+database = "mydatabase"
+endpoint = "http://51.250.3.225:8123"
+table = "mytable"
+compression = "gzip"
