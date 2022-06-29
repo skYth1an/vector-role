@@ -3,9 +3,18 @@ dependency:
   name: galaxy
 driver:
   name: docker
+docker:
+  containers:
+    - name: molecule-test
+      image: ubuntu
+      image_version: latest
+      ansible_groups:
+        - group1
 platforms:
   - name: instance
 provisioner:
   name: ansible
 verifier:
   name: ansible
+  options:
+    sudo: false
