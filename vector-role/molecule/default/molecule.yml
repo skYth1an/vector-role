@@ -33,7 +33,7 @@ platforms:
 provisioner:
   name: ansible
   options:
-    vv: false
+    vv: true
     D: true
   inventory:
     links:
