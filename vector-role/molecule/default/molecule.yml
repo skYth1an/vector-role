@@ -14,7 +14,7 @@ lint: |
 platforms:
   - name: centos_7
     image: centos:7
-    dockerfile: ../resources/Dockerfile.j2
+    dockerfile: /opt/jenkins_agent/workspace/freestyle/vector-role/resources/Dockerfile.j2
     # pre_build_image: true
     command: /usr/sbin/init
     privileged: true
@@ -37,15 +37,15 @@ provisioner:
     D: true
   inventory:
     links:
-      hosts: ../resources/inventory/hosts.yml
-      group_vars: ../resources/inventory/group_vars/
-      host_vars: ../resources/inventory/host_vars/
+      hosts: /opt/jenkins_agent/workspace/freestyle/vector-role/resources/inventory/hosts.yml
+      group_vars: /opt/jenkins_agent/workspace/freestyle/vector-role/resources/inventory/group_vars/
+      host_vars: /opt/jenkins_agent/workspace/freestyle/vector-role/resources/inventory/host_vars/
   playbooks:
-    converge: ../resources/playbooks/converge.yml
+    converge: /opt/jenkins_agent/workspace/freestyle/vector-role/resources/playbooks/converge.yml
 verifier:
   name: ansible
   playbooks:
-    verify: ../resources/tests/verify.yml
+    verify: /opt/jenkins_agent/workspace/freestyle/vector-role/resources/tests/verify.yml
 scenario:
   test_sequence:
     - destroy
